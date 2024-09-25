@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.div1 {
+  position: relative;
+  width: 20vw;
+  height: 20vh;
+  background: lightblue;
+  flex-grow: 0;
+}
+
+.div2 {
+  position: relative;
+  width: 20vw;
+  height: 20vh;
+  background: green;
+  flex-grow: 0;
+}
+
+.div3 {
+  position: relative;
+  width: 20vw;
+  height: 20vh;
+  background: pink;
+  flex-grow: 0;
+}
+
+#container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* width: 500px;
+  margin-left: 100px; */
+}
+
+#left-panel,
+#right-panel {
+  height: 100%;
+}
+
+#left-panel {
+  background-color: yellow;
+  width: 50%; /* Initial width */
+}
+
+#right-panel {
+  background-color: green;
+  width: 50%;
+}
+
+#resizer {
+  width: 5px;
+  background-color: #000;
+  cursor: ew-resize;
+  height: 100%;
+}
+
+.stoppage {
+  flex-shrink: 0;
+}
+
+.resizer {
+  width: 4px;
+  background-color: #000;
+  cursor: ew-resize;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+}

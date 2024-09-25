@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="div1" appResizable>
+    <p>
+      Hello I am the first of three resizable components. Just drag the grey bar
+      to my right.
+    </p>
+  </div>
+
+  <div class="div2" [resizableMinWidth]="30" appResizable>
+    <h2>I am stuck in the middle.</h2>
+  </div>
+  <div class="div3" appResizable>
+    <p>I am the last one !</p>
+    <p></p>
+  </div>
+</div>
+
+<div id="container">
+  <ng-container *ngFor="let stoppage of stoppages; let i = index">
+    <div
+      class="stoppage"
+      [ngStyle]="{
+        width: stoppage.size + '%',
+        'background-color': stoppage.color
+      }"
+    >{{i}}</div>
+    <div
+      class="resizer"
+      [ngStyle]="{ left: 'calc(' + stoppage.left + '% - 2px)' }"
+      *ngIf="stoppages.length - 1 > i"
+      (mousedown)="onResizeStart($event, stoppage)"
+    ></div>
+  </ng-container>
+  <!-- <div class="stoppage green"></div>
+  <div id="resizer" (mousedown)="onResizeStart($event)"></div>
+  <div id="right-panel"></div> -->
+</div>
